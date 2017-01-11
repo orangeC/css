@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单标签左边竖条的实现方式</title>
+	<style>
+		div{position: relative;width: 200px;height: 60px;background-color: #ddd;}
+		/*div::after{content: "";width: 5px;height: 60px;position: absolute;top: 0;left: 0;background-color: deeppink;}*/
+
+
+		/*div{box-shadow: -5px 0px 0 deeppink}*/
+
+		/*div{box-shadow: inset 5px 0 0 deeppink}*/
+
+		/*div{-webkit-filter: drop-shadow( -5px 0px 0px deeppink);}*/
+
+		div{background-image: linear-gradient(to right,deeppink 0px,deeppink 5px,transparent 5px)}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
