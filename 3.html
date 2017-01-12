@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background-origin  background-clip</title>
+	<style>
+		div{position: relative;width: 180px;height: 180px;}
+
+		/*div{
+		    background:#9c27b0;
+		    border:20px dashed #2196f3;
+		}
+		div::after{position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: #fff;content: ""}*/
+
+		/*法二：
+
+		上面的方法，我们使用了 div 的背景色默认情况下从 border 开始填充，及伪元素设置白色背景色填充 div 的中间的 padding-box 区域完成图形。
+
+		也可以反过来，使用伪元素背景色从 border-box 开始填充，使用 div 的背景色填充中间 padding-box区域。*/
+		div{
+		    background:#fff;
+		    background-clip:padding-box;
+		    border:20px dashed #cccc99;
+		}
+		div::before{
+		    content:"";
+		    position:absolute;
+		    top:-20px;
+		    left:-20px;
+		    bottom:-20px;
+		    right:-20px;
+		    background:#996699;
+		    z-index:-1;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+<!-- background-origin：指定从哪儿开始绘制背景；
+background-clip：不管你怎么绘制的背景，我是控制背景怎么显示，你就算绘制了我也能让你不显示。
+总结：background-origin用于绘制，background-clip用于控制显示。
+ -->
