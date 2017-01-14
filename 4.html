@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			margin: 50px auto;
+			width: 200px;
+			height: 200px;
+			background-image: url('http://images2015.cnblogs.com/blog/608782/201609/608782-20160926101029078-1479229145.jpg');
+			position: relative;
+		}
+		div::after{
+			content:"";
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			bottom: -100%;
+			background-image: inherit;
+			transform: rotateX(180deg)
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
